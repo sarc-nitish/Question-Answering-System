@@ -1,73 +1,74 @@
 # Question Answering System using MDeBERTa
 
-This is a robust Question Answering (QA) web application developed using **Hugging Face Transformers** and **Streamlit** as part of the DevifyX NLP Job Assignment. It allows users to input a context paragraph and ask natural language questions. The system extracts the most relevant answer span from the context using a powerful transformer model.
+This is a robust Question Answering (QA) web application developed using **Hugging Face Transformers** and **Streamlit** as part of the **DevifyX NLP Job Assignment**. It allows users to input a context paragraph and ask natural language questions. The system extracts the most relevant answer span from the context using a powerful transformer model.
 
 ---
 
-## 🔬 Model Used
+##  Model Used
 
 * **Model**: `timpal0l/mdeberta-v3-base-squad2`
 * **Framework**: Hugging Face Transformers
-* **Reason**: MDeBERTa-v3 is known for its high accuracy on QA tasks, especially on the SQuAD2.0 dataset.
+* **Accuracy**: Very high on SQuAD2.0
+* **Justification**: MDeBERTa-v3 is one of the most accurate models for extractive QA and handles unanswerable questions well.
 
 ---
 
-## ⚖️ Features
+##  Features
 
 ### Core Features
 
-* ✏️ Accepts paragraph (context) and question as input
-* ✉️ Extracts the most relevant answer from the context
-* 🔢 Confidence score displayed for the predicted answer
-* ⚠️ Error handling for empty inputs or invalid questions
-* 🔮 Relevance check between question and context (keyword overlap)
+*  Accepts paragraph (context) and question as input
+*  Extracts the most relevant answer from the context
+*  Confidence score displayed for the predicted answer
+*  Error handling for empty inputs or irrelevant questions
+*  Relevance check between question and context (keyword overlap)
 
-### Bonus Features
+### Bonus Features (Implemented)
 
-* 🔍 Highlights extracted answer inside the context
-* 📊 Score-based warnings (e.g., low confidence)
-* 🌐 Streamlit web interface
+*  Highlights extracted answer inside the context
+*  Score-based answer reliability classification
+*  Streamlit web-based UI for interactive use
 
 ---
 
-## 🚀 How to Run the App
+##  How to Run the App Locally
 
-### Step 1: Clone the repository (or download ZIP)
+### Step 1: Clone the repository
 
 ```bash
-$ git clone https://github.com/your-repo/qa-streamlit-app.git
-$ cd qa-streamlit-app
+git clone https://github.com/your-username/qa-streamlit-app.git
+cd qa-streamlit-app
 ```
 
-### Step 2: Create and activate a virtual environment (recommended)
+### Step 2: Create and activate a virtual environment
 
 ```bash
 # For Windows
-$ python -m venv venv
-$ venv\Scripts\activate
+python -m venv venv
+venv\Scripts\activate
 
 # For Linux/macOS
-$ python3 -m venv venv
-$ source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ### Step 3: Install dependencies
 
 ```bash
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-### Step 4: Run the Streamlit app
+### Step 4: Run the app
 
 ```bash
-$ streamlit run app.py
+streamlit run app.py
 ```
 
-The app will open in your browser (usually at [http://localhost:8501](http://localhost:8501)).
+The app will open in your browser at `http://localhost:8501`
 
 ---
 
-## 📄 Project Structure
+##  Project Structure
 
 ```
 qa-streamlit-app/
@@ -78,17 +79,15 @@ qa-streamlit-app/
 
 ---
 
-## 🔧 Dependencies
+##  Dependencies
 
-Listed in `requirements.txt`:
-
-```txt
+```
 streamlit
 transformers
 torch
 ```
 
-To install:
+Install with:
 
 ```bash
 pip install -r requirements.txt
@@ -96,40 +95,37 @@ pip install -r requirements.txt
 
 ---
 
-## ✅ Evaluation Checklist (Assignment Criteria)
+##  Live Deployment
 
-| Criteria                          | Status               |
-| --------------------------------- | -------------------- |
-| Context + Question Input          | ✅ Yes                |
-| Answer Extraction via Transformer | ✅ Yes                |
-| Preprocessing                     | ✅ Via pipeline       |
-| Confidence Score Display          | ✅ Yes                |
-| Error Handling                    | ✅ Yes                |
-| Highlighting + Relevance Check    | ✅ Bonus Done         |
-| Streamlit Web Interface           | ✅ Yes                |
-| Documentation (README)            | ✅ You're reading it! |
+The app is deployed and accessible online:
+
+🔗 **[Live App](https://question-answering-system-assignment.streamlit.app)**
+
+Anyone can open the link, paste a paragraph, ask a question, and get an answer with confidence insights.
 
 ---
 
-## 🚫 Limitations
+##  Assignment Requirements Checklist (DevifyX)
 
-* Not multilingual (currently uses English-only model)
-* Only one question at a time
-* Not containerized (Docker not included)
+| Requirement                             | Implemented                     |
+| --------------------------------------- | ------------------------------- |
+| Accepts context and question            | ✅ Yes                           |
+| Answer extraction via transformer model | ✅ Yes                           |
+| Preprocessing (tokenization, etc.)      | ✅ Done by Hugging Face pipeline |
+| Confidence scoring shown                | ✅ Yes                           |
+| Handles empty/invalid input             | ✅ Yes                           |
+| Documentation provided                  | ✅ This README                   |
+| Streamlit UI                            | ✅ Yes                           |
+| Bonus: Answer highlighting              | ✅ Yes                           |
+| Bonus: Relevance keyword check          | ✅ Yes                           |
 
 ---
 
-## 🙏 Credits
+##  Limitations
 
-* Developed by: \[Your Name]
-* Using Hugging Face Transformers & Streamlit
-* Assignment by: DevifyX NLP Job Assignment Team
+* Supports only English (monolingual)
+* One question at a time
 
----
-
-## ✉ Submission Reminder
-
-Zip this folder and submit via:
-**[https://forms.gle/A2MBA9FTJsJerh1s5](https://forms.gle/A2MBA9FTJsJerh1s5)**
-
-Good luck ✨ and thank you for reviewing this project!
+```
+zip qa-streamlit-app.zip app.py requirements.txt README.md
+```
